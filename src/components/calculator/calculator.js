@@ -2,13 +2,16 @@ import React from 'react';
 import Keypad from '../keypad';
 import Screen from '../screen';
 import s from './calculator.module.css';
+import { useState } from 'react'
+
+
 
 export default function Calculator() {
-  // TODO: Implement calculator logic here
+  const [data, setData] = useState([0])
   return (
     <div className={s.calculator}>
-      <Screen />
-      <Keypad />
+      <Screen text={data}  />
+      <Keypad updateShared={setData} />
     </div>
   );
 }
